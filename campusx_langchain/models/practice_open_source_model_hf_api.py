@@ -15,11 +15,12 @@ meta-llama/Llama-3.2-1B-Instruct
 
 llm = HuggingFaceEndpoint(
     repo_id = "mistralai/Mistral-7B-Instruct-v0.3",
-    task = "text-generation"
+    task = "text-generation",
+    temperature = 2
 )
 
 model = ChatHuggingFace(llm=llm)
 
-result = model.invoke('What is the capital of India')
+result = model.invoke('Write a 5 line poem on India')
 
 print(result.content)
